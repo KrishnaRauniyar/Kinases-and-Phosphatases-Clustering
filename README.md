@@ -5,11 +5,6 @@
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Retrieve PDB Files](#retrieve-pdb-files)
-  - [Generate Keys and Triplets](#generate-keys-and-triplets)
-  - [Using with CSV Input](#using-with-csv-input)
-- [Arguments](#arguments)
-- [Examples](#examples)
 
 ## Installation
 
@@ -49,6 +44,7 @@ You can pass a CSV file as input to process key generation and then you can use 
 
 The Jaccard Similarity should have the following format.
 
+|----------------------------------|
 |2R92_P_10_A;0,0,0,0,0,3,2,2,......|
 |2R92_P_11_C;0,0,0,0,0,4,0,0,......|
 |2R92_P_12_C;0,0,0,0,0,2,1,0,......|
@@ -57,5 +53,16 @@ The Jaccard Similarity should have the following format.
 To run the code:
 
 ```python
-    python clustermap_n.py
+python clustermap_n.py -p (jaccard input csv file) -n (number of clusters)
 ```
+
+Example code:
+
+```python
+python clustermap_n.py -p jaccard.csv -n 5
+```
+
+## Result
+- Two files will be generated
+    1. clustermap.png (This is the clustermap created with n number of cluster color)
+    2. clustermap.csv (This contains the number of clusters with their rows containing kinases and phosphatases)
