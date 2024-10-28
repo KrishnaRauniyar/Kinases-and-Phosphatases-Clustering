@@ -44,7 +44,6 @@ You can pass a CSV file as input to process key generation and then you can use 
 
 The Jaccard Similarity should have the following format.
 
-| Protein_Key    | Feature_1 | Feature_2 | Feature_3 | Feature_4 | Feature_5 | Feature_6 | Feature_7 | Feature_8 | ... |
 |----------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----|
 | 2R92_P_10_A    | 0         | 0         | 0         | 0         | 0         | 3         | 2         | 2         | ... |
 | 2R92_P_11_C    | 0         | 0         | 0         | 0         | 0         | 4         | 0         | 0         | ... |
