@@ -44,11 +44,10 @@ You can pass a CSV file as input to process key generation and then you can use 
 
 The Jaccard Similarity should have the following format.
 
-|----------------------------------|
-|2R92_P_10_A;0,0,0,0,0,3,2,2,......|
-|2R92_P_11_C;0,0,0,0,0,4,0,0,......|
-|2R92_P_12_C;0,0,0,0,0,2,1,0,......|
-|2R92_P_13_A;0,0,0,0,0,4,1,2,......|
+2R92_P_10_A;0,0,0,0,0,3,2,2,......
+2R92_P_11_C;0,0,0,0,0,4,0,0,......
+2R92_P_12_C;0,0,0,0,0,2,1,0,......
+2R92_P_13_A;0,0,0,0,0,4,1,2,......
 
 To run the code:
 
