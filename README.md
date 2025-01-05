@@ -38,7 +38,7 @@ The analysis involves three main steps:
 First, you need to generate a frequency file that will create the input CSV for the clustering, the key frequency files can be created from the triplets file which we create from the Nuclotide section (https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE.git). We just need to specify the acutual directory path of the triplets keys. Use the following command to generate the input file:
 
 ```bash
-python key_frequency_drug.py -p triplets_directory -H yes
+python key_frequency_drug.py -p triplets_directory -H no
 ```
 
 #### Parameters:
@@ -50,14 +50,15 @@ This will generate an input CSV file with the frequency of triplet keys for each
 #### CSV file information as input (input_csv_file.csv)
 input_csv_file.csv will have the following format.
 
-|               |            |             |                        |  
-|---------------|------------|-------------|------------------------|
-| 4NGF_H_15_U   | 4          | 0           | 0                      |
-| 5VM9_D_3_A    | 1          | 5           | 9                      |
+```
+4NGF_H_15_U;3,2,4,0,6,0,10,7...
+5VM9_D_3_A;5,6,7,5,6,0,1,10,...
+```
 
-Here the first column is the protein, second, third and so on are the key1, key2 respectively.
+Here the first column is the protein, second, third and so on are the key1, key2 frequency in the respective protein.
 
-
+### 2. Generate Jaccard Similarity
+Jaccard similarity can be generated using the code in this link (https://github.com/dbxmcf/hsp70_actin)
 
 The Jaccard Similarity should have the following format.
 
@@ -67,8 +68,8 @@ The Jaccard Similarity should have the following format.
 2R92_P_12_C; 0.740, 0.668, 0.000, 0.757, ...
 2R92_P_13_A; 0.555, 0.719, 0.757, 0.000, ...
 ```
-
-To run the code:
+### 3. Hierarchical Clustering
+Run the code for hierarchical clustering:
 
 ```python
 python clustermap_n.py -p (jaccard input csv file) -n (number of clusters)
@@ -83,4 +84,4 @@ python clustermap_n.py -p jaccard.csv -n 5
 ## Result
 - Two files will be generated
     1. clustermap.png (This is the clustermap created with n number of cluster color)
-    2. clustermap.csv (This contains the number of clusters with their rows containing kinases and phosphatases)
+    2. clustermap.csv (This contains the number of clusters with their rows containing the proteins)
