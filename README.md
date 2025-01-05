@@ -50,7 +50,7 @@ This will generate an input CSV file with the frequency of triplet keys for each
 #### CSV file information as input (input_csv_file.csv)
 input_csv_file.csv will have the following format.
 
-| Protein       | key1       | key2        | key3                   | 
+|               |            |             |                        |  
 |---------------|------------|-------------|------------------------|
 | 4NGF_H_15_U   | 4          | 0           | 0                      |
 | 5VM9_D_3_A    | 1          | 5           | 9                      |
