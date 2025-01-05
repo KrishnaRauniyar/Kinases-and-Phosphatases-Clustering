@@ -33,14 +33,27 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-### Using a CSV file as Input
-You can pass a CSV file as input to process key generation and then you can use the key generation frequency file to generate Jaccard Similarity. The CSV file should have the following format:
+The analysis involves three main steps:
+### 1. Generate Key Frequency File
+First, you need to generate a frequency file that will create the input CSV for the DNN model, the key frequency files can be created from the triplets file which we create from the Nuclotide section (https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE.git). We just need to specify the acutual directory path of the triplets keys. Use the following command to generate the input file:
 
-|protein         |chain        |
-|----------------|-------------|
-|1GTA            |A            |
-|1GTB            |A            |
-|1LBE            |A            |
+```bash
+python key_frequency_drug.py -p triplets_directory -H yes
+```
+
+#### Parameters:
+- -p: Path to the directory containing protein files
+- -H: Set to 'no' not to include headers in the output CSV (This is necessary for jaccard similarity calculation)
+This will generate an input CSV file with the frequency of triplet keys for each protein.
+
+#### CSV file information as input (input_csv_file.csv)
+input_csv_file.csv will have the following format.
+
+|---------------|------------|-------------|------------------------|
+| 4NGF_H_15_U   | 4          | 0           | 0                      |
+| 5VM9_D_3_A    | 1          | 5           | 9                      |
+
+Here the first column is the protein, second, third and so on are the key1, key2 respectively.
 
 The Jaccard Similarity should have the following format.
 
